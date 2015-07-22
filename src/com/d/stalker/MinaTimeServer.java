@@ -1,4 +1,4 @@
-package com.d.mina;
+package com.d.stalker;
 import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.nio.charset.Charset;
@@ -15,6 +15,7 @@ import org.apache.mina.filter.logging.LoggingFilter;
 import org.apache.mina.transport.socket.nio.NioSocketAcceptor;
 
 import com.alibaba.fastjson.JSON;
+import com.d.stalker.bean.Message;
 
 
 public class MinaTimeServer {
@@ -40,7 +41,7 @@ public class MinaTimeServer {
 					return;
 				}else{
 				Message mes=JSON.parseObject(message.toString(), Message.class);
-				if("login".equals(mes.getFlag())){
+				if("login".equals(mes.getCmd())){
 					session.setAttribute("userName", mes.getFormUser());
 					return;
 				}

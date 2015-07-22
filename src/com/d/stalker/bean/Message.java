@@ -1,13 +1,14 @@
-package com.d.mina;
+package com.d.stalker.bean;
+
 import java.util.Date;
 
 public class Message {
-	private String sessionId;
 	private String formUser;
 	private String toUser;
 	private Date time;
 	private String message;
-	private String flag;
+	private Location location;
+	private String cmd;
 	public String getFormUser() {
 		return formUser;
 	}
@@ -26,23 +27,23 @@ public class Message {
 	public void setMessage(String message) {
 		this.message = message;
 	}
-	public String getFlag() {
-		return flag;
-	}
-	public void setFlag(String flag) {
-		this.flag = flag;
-	}
 	public String getToUser() {
 		return toUser;
 	}
 	public void setToUser(String toUser) {
 		this.toUser = toUser;
 	}
-	public String getSessionId() {
-		return sessionId;
+	public Location getLocation() {
+		return location;
 	}
-	public void setSessionId(String sessionId) {
-		this.sessionId = sessionId;
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+	public String getCmd() {
+		return cmd;
+	}
+	public void setCmd(String cmd) {
+		this.cmd = cmd;
 	}
 	
 	

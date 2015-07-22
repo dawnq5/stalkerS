@@ -1,4 +1,4 @@
-package com.d.mina;
+package com.d.stalker;
 import java.net.InetSocketAddress;
 import java.nio.charset.Charset;
 
@@ -11,6 +11,7 @@ import org.apache.mina.filter.logging.LoggingFilter;
 import org.apache.mina.transport.socket.nio.NioSocketConnector;
 
 import com.alibaba.fastjson.JSON;
+import com.d.stalker.bean.Message;
 
 
 public class MinaTimeClient {
@@ -35,7 +36,7 @@ public class MinaTimeClient {
 		Message  message=new Message();
 		message.setFormUser("user2");
 		message.setMessage("登录");
-		message.setFlag("login");//首次登录
+		message.setCmd("login");//首次登录
 		cf.getSession().write(JSON.toJSONString(message));
 		
 		//cf.getSession().write("hello");//发送消息 
