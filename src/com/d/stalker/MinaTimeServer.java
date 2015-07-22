@@ -29,7 +29,10 @@ public class MinaTimeServer {
 		acceptor.setHandler(new IoHandlerAdapter(){
 			public void sessionCreated(IoSession session) {
 				// 显示客户端的ip和端口
+				Collection<IoSession> sessions = session.getService().getManagedSessions().values();
+				
 				System.out.println("IP："+session.getRemoteAddress().toString()+",sessionId:"+session.getId());
+				System.out.println("用户上线，"+"在线人数=》"+sessions);
 			}
 
 			@Override
